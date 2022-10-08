@@ -14,7 +14,7 @@ hiddenInfo = content = hiddenInfoFile.readlines()
 
 start_file = "/home/landonbakken/Desktop/MinecraftModThings/Paper-1.18/start.sh"
 
-git_dir = "/home/landonbakken/Desktop/MinecraftModThings/Paper-1.18/plugins/Skript/scripts"
+git_dir = "/home/landonbakken/Desktop/Repositories/EngineeringClubWebpage"
 g = git.cmd.Git(git_dir)
 
 bot = commands.Bot(command_prefix="@")
@@ -90,4 +90,4 @@ async def die(ctx):
 	await ctx.send("Bye (:")
 	exit()
 
-bot.run(hiddenInfo[0])
+bot.run(hiddenInfo[1])
