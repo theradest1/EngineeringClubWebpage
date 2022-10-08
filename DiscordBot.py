@@ -8,6 +8,7 @@ import git
 import time
 import signal
 import threading
+import subprocess
 
 hiddenInfoFile = open("hiddenInfo.txt")
 hiddenInfo = content = hiddenInfoFile.readlines()
@@ -40,7 +41,8 @@ bot = commands.Bot(command_prefix="@", intents = intents)
 
 
 def start_server():
-	server = Popen("live-server index.html", shell=True, preexec_fn=os.setsid)
+	subprocess.Popen("live-server index.html", shell = True)
+	#, shell=True, preexec_fn=os.setsion
 	#countThread = threading.Thread(target=countForServer, name="count")
 	#countThread.start(server)
 	return server
