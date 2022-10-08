@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+##!/usr/bin/python3
 
 import discord
 from discord.ext import commands
@@ -14,10 +14,12 @@ hiddenInfo = content = hiddenInfoFile.readlines()
 
 start_file = "/home/landonbakken/Desktop/MinecraftModThings/Paper-1.18/start.sh"
 
-git_dir = "/home/landonbakken/Desktop/Repositories/EngineeringClubWebpage"
+git_dir = "/home/server/EngineeringClubWebpage"
 g = git.cmd.Git(git_dir)
 
-bot = commands.Bot(command_prefix="@")
+intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix="@", intents = intents)
 
 #max_on_time = 30
 
