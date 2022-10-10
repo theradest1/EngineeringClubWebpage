@@ -14,6 +14,9 @@ app.set('views', './views');
 app.get("", (req, res) => {
 	res.sendFile(__dirname + "/views/index.html");
 });
+app.get("/seaperch", (req, res) => {
+	res.sendFile(__dirname + "/views/seaperch.html");
+});
 
 app.listen(port, host, () => {
 	console.log("Server started on port " + port);
