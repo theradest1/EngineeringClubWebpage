@@ -13,7 +13,7 @@ import subprocess
 hiddenInfoFile = open("hiddenInfo.txt")
 hiddenInfo = content = hiddenInfoFile.readlines()
 
-start_file = "/home/server/EngineeringClubWebpage/StartLiveServer.sh"
+start_file = "/home/server/EngineeringClubWebpage/StartServer.sh"
 
 git_dir = "/home/server/EngineeringClubWebpage"
 g = git.cmd.Git(git_dir)
@@ -41,7 +41,7 @@ bot = commands.Bot(command_prefix="@", intents = intents)
 
 
 def start_server():
-	subprocess.Popen("live-server index.html", shell = True)
+	subprocess.Popen("node app.js", shell = True)
 	#, shell=True, preexec_fn=os.setsion
 	#countThread = threading.Thread(target=countForServer, name="count")
 	#countThread.start(server)
