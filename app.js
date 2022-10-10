@@ -1,13 +1,20 @@
-//const express = require('express');
+const express = require('express');
 
-//const app = express();
-//const port = 3000;
-//const host = "0.0.0.0";
+const app = express();
+const port = 3000;
+const host = "0.0.0.0";
 
-//app.get("/home/", (req, res) => {
-//	res.send("server up");
-//});
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + 'public/css'));
+app.use("/js", express.static(__dirname + 'public/js'));
+app.use("/img", express.static(__dirname + 'public/img'));
 
-//app.listen(port, host, () => {
-//	console.log("Server started on port " + port);
-//});
+app.set('views', './views');
+
+app.get("", (req, res) => {
+	res.sendFile(__dirname + "/views/index.html");
+});
+
+app.listen(port, host, () => {
+	console.log("Server started on port " + port);
+});
