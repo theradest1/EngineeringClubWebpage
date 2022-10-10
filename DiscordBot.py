@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 from subprocess import Popen
 import os
+import psutil
 import git
 import time
 import signal
@@ -41,14 +42,26 @@ bot = commands.Bot(command_prefix="@", intents = intents)
 
 
 def start_server():
-	server = subprocess.Popen("node app.js", shell = True)
+	global server
+	server = subprocess.Popen("node app.js", shell = True, stdout=subprocess.PIPE)
+	print(server)
 	#, shell=True, preexec_fn=os.setsion
 	#countThread = threading.Thread(target=countForServer, name="count")
 	#countThread.start(server)
-	return server
 
 def stop_server():
-	server.terminate()
+	global server
+	print(server)
+	#server.kill()
+	kill_proc_tree(os.getpid())
+	#os.killpg(os.getpgid(server.pid), signal.SIGTERM)
+	#subprocess.Popen.kill(server)
+
+def kill_proc_tree(pid):    
+    parent = psutil.Process(pid)
+    children = parent.children(recursive=True)
+    for child in children:
+        child.kill()
 
 @bot.command()
 async def server(ctx, arg):
@@ -61,11 +74,10 @@ async def server(ctx, arg):
 		except:
 			await ctx.send("Server Start Failed (not sure why)")
 	if arg == "stop":
-		try:
-			await ctx.send("Stopping")
-			stop_server()
-		except:
-			await ctx.send("Server Stop Failed (not sure why)")
+		await ctx.send("Stopping")
+		stop_server()
+		#except:
+		#	await ctx.send("Server Stop Failed (not sure why)")
 	if arg == "restart":
 		try:
 			await ctx.send("Stopping")
