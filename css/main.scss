@@ -1,5 +1,5 @@
 body {
-	background: #fff;
+	background: rgb(255, 255, 255);
 	margin: 0;
 	font-family: 'Times New Roman', Times, serif;
 }
@@ -24,7 +24,7 @@ body {
 	li {
 		a {
 			text-decoration: none;
-			padding: .8em;
+			padding: .9em;
 
 			&:hover {
 				color: #000000;
@@ -38,18 +38,18 @@ body {
 
 .hero_logo {
 	font-weight: bold;
-	color: black;
+	color: rgb(17, 17, 17);
 	font-size: 2em;
 	text-align: center;
 
 	span {
-		color: rgb(255, 17, 0);
+		color: rgb(255, 112, 45);
 	}
 }
 
 .announcements {
 	padding: .1;
-	margin-top: -5em;
+	margin-top: -3em;
 
 	ul {
 		margin-top: -1em;
@@ -60,7 +60,12 @@ body {
 	}
 }
 
+.contacts {
+	margin-top: -3em;
+}
+
 .info {
+	margin-top: -3em;
 	ul {
 		margin-top: -1em;
 	}
@@ -82,4 +87,16 @@ ul {
 
 section {
 	padding: 3em 1em
+}
+
+@media only screen and (max-width: 600px){
+	.navbar {
+		padding-left: 0;
+		ul {
+			display: initial;
+		}
+		li {
+			text-align: left;
+		}
+	}
 }

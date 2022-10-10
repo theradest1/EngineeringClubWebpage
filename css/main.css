@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: rgb(255, 255, 255);
   margin: 0;
   font-family: "Times New Roman", Times, serif;
 }
@@ -24,7 +24,7 @@ body {
 }
 .navbar li a {
   text-decoration: none;
-  padding: 0.8em;
+  padding: 0.9em;
 }
 .navbar li a:hover {
   color: #000000;
@@ -33,17 +33,17 @@ body {
 
 .hero_logo {
   font-weight: bold;
-  color: black;
+  color: rgb(17, 17, 17);
   font-size: 2em;
   text-align: center;
 }
 .hero_logo span {
-  color: rgb(255, 17, 0);
+  color: rgb(255, 112, 45);
 }
 
 .announcements {
   padding: 0.1;
-  margin-top: -5em;
+  margin-top: -3em;
 }
 .announcements ul {
   margin-top: -1em;
@@ -53,6 +53,13 @@ body {
   padding-left: 0;
 }
 
+.contacts {
+  margin-top: -3em;
+}
+
+.info {
+  margin-top: -3em;
+}
 .info ul {
   margin-top: -1em;
 }
@@ -73,4 +80,16 @@ ul {
 
 section {
   padding: 3em 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding-left: 0;
+  }
+  .navbar ul {
+    display: initial;
+  }
+  .navbar li {
+    text-align: left;
+  }
 }/*# sourceMappingURL=main.css.map */
