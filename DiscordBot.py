@@ -41,18 +41,37 @@ bot = commands.Bot(command_prefix="@", intents = intents)
 
 
 def start_server():
-	subprocess.Popen("node app.js", shell = True)
+	server = subprocess.Popen("node app.js", shell = True)
 	#, shell=True, preexec_fn=os.setsion
 	#countThread = threading.Thread(target=countForServer, name="count")
 	#countThread.start(server)
 	return server
 
+def stop_server():
+	server.terminate()
 
 @bot.command()
 async def server(ctx, arg):
 	arg = arg.lower()
 	if arg == "start":
 
+		try:
+			await ctx.send("Starting")
+			start_server()
+		except:
+			await ctx.send("Server Start Failed (not sure why)")
+	if arg == "stop":
+		try:
+			await ctx.send("Stopping")
+			stop_server()
+		except:
+			await ctx.send("Server Stop Failed (not sure why)")
+	if arg == "restart":
+		try:
+			await ctx.send("Stopping")
+			stop_server()
+		except:
+			await ctx.send("Server Stop Failed (not sure why)")
 		try:
 			await ctx.send("Starting")
 			start_server()
