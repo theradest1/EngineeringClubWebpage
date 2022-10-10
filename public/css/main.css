@@ -57,6 +57,10 @@ body {
   margin-top: -3em;
 }
 
+.links {
+  margin-top: -3em;
+}
+
 .info {
   margin-top: -3em;
 }
@@ -78,6 +82,12 @@ ul {
   list-style-type: none;
 }
 
+.dot_list {
+  padding-top: 1em;
+  padding-left: 1em;
+  list-style-type: disc;
+}
+
 section {
   padding: 3em 1em;
 }
@@ -92,4 +102,20 @@ section {
   .navbar li {
     text-align: left;
   }
+}
+.active_page {
+  color: rgb(255, 112, 45);
+}
+
+.banner_img {
+  position: relative;
+  text-align: center;
+  background: rgb(219, 219, 219);
+  padding: 2% 5%;
+}
+.banner_img .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=main.css.map */
